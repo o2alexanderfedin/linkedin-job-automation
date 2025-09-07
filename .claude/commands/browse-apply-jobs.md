@@ -47,4 +47,13 @@ flowchart TD
 - Human-like interaction patterns (delays, natural scrolling)
 - Error handling and retry mechanisms
 
+## Task Execution Rules
+
+**SEQUENTIAL EXECUTION REQUIRED** - All Task tool calls must run sequentially:
+
+1. **Job Processing** (one job at a time using job-processor agent)
+2. **Application Tracking** (after each application to check count)
+
+**Never run Task tool calls in parallel** - Each job must be completely processed before moving to the next job.
+
 Execute the browse and apply workflow for job opportunities.

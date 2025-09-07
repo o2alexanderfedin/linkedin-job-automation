@@ -96,4 +96,15 @@ Once configured, all other job application commands (`/linkedin-jobs`, `/apply-j
 # Display summary without showing sensitive information
 ```
 
+## Task Execution Rules
+
+**SEQUENTIAL EXECUTION REQUIRED** - All Task tool calls must run sequentially due to file dependencies:
+
+1. **Input Validation** → **Backup Creation** (validation must complete before backup)
+2. **Backup Creation** → **Credential Writing** (backup must exist before overwriting)
+3. **Credential Writing** → **Permission Setting** (file must exist before setting permissions)
+4. **Permission Setting** → **Verification** (permissions must be set before verification)
+
+**Never run Task tool calls in parallel** - Each file operation depends on the previous step's completion.
+
 Configure your job application credentials for seamless LinkedIn automation with secure local storage.

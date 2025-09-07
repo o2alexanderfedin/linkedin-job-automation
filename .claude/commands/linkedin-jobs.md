@@ -72,4 +72,15 @@ Each application will be documented with:
 
 **Credential Handling:** Managed by linkedin-login agent with flexible source priority
 
+## Task Execution Rules
+
+**SEQUENTIAL EXECUTION REQUIRED** - All Task tool calls must run sequentially due to data dependencies:
+
+1. **Resume Analysis** → **Login** (login needs resume context for user info)
+2. **Login** → **Job Search** (search needs authenticated session)  
+3. **Job Search** → **Browse/Apply** (browsing needs search results loaded)
+4. **Browse/Apply** → **Application Tracking** (tracking needs application completion data)
+
+**Never run Task tool calls in parallel** - Each step requires output from the previous step.
+
 Execute the full LinkedIn job application automation workflow with the specified search parameters.

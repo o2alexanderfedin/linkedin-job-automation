@@ -78,5 +78,21 @@ After successful application, must invoke application-logger agent with complete
 - **Job relevance score** (e.g., High, Medium, Low match to candidate profile)
 - **Application reasoning** (brief explanation why this job was worth applying to)
 
+## Task Execution Rules
+
+**SEQUENTIAL EXECUTION REQUIRED** - All Task tool calls must run sequentially due to job processing state dependencies:
+
+1. **Job Detail Extraction** → **Suitability Assessment** (assessment needs extracted details)
+2. **Suitability Assessment** → **Application Decision** (decision needs assessment results)
+3. **Application Decision** → **Method Selection** (method needs decision outcome)
+4. **Method Selection** → **Form Completion** (completion needs selected method)
+5. **Form Completion** → **Application Logging** (logging needs completion confirmation)
+
+**PARALLEL EXECUTION ALLOWED** for independent validation checks only:
+- Multiple job detail format validation checks (salary, location, requirements format validation)
+- Multiple application method availability checks (Easy Apply, external portal, email application checks)
+
+**Never run dependent Task tool calls in parallel** - Each processing step requires output from the previous step for accurate decision-making and application completion.
+
 **Return Status:**
 Status indicating job processing outcome: Applied (with logging confirmation), Skipped, or Error with brief reasoning.
