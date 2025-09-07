@@ -71,23 +71,6 @@ Each application will be documented with:
 - Application timestamp and status
 - Match reasoning based on qualifications
 
-**Credential Priority Order:**
-1. **Environment Variables**: Reads from .env file if available (created by `/setup-job-credentials`)
-2. **Hardcoded Defaults**: Falls back to built-in defaults if .env not found
-3. **Interactive Prompts**: Asks for missing credentials during execution
-
-**Default Credentials (fallback if .env not configured):**
-- Email: jobs4alex@allconnectix.com
-- Phone: (425)351-1652
-- Location: San Jose, CA 95128
-- Work Authorization: Green Card holder
-- Resume: /Users/alexanderfedin/Library/CloudStorage/OneDrive-Personal/Resumes/AlexanderFedin-AI_2025-01-21.pdf
-
-**Environment Variables Used (from .env):**
-- `LINKEDIN_EMAIL` and `LINKEDIN_PASSWORD` for authentication
-- `JOB_PHONE`, `JOB_LOCATION`, `JOB_WORK_AUTH` for application forms
-- `JOB_RESUME_PATH` for resume upload
-
-**Setup:** Run `/setup-job-credentials` first to configure your .env file for seamless automation.
+**Credential Handling:** Managed by linkedin-login agent with flexible source priority
 
 Execute the full LinkedIn job application automation workflow with the specified search parameters.
