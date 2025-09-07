@@ -40,17 +40,16 @@ For a resume showing "Principal Software Engineer at Waymo" with "AI/ML, Python,
 
 ```mermaid
 flowchart TD
-    A[Analyze Resume] --> B[Extract Search Parameters]
-    B --> C[Open Browser]
-    C --> D[Navigate to LinkedIn]
-    D --> E[Login to LinkedIn]
-    E --> F[Search for Jobs]
-    F --> G{Jobs found?}
-    G -->|No| H[End - no jobs found]
-    G -->|Yes| I[Browse and Apply to Jobs]
-    I --> J{Applied to target count?}
-    J -->|No| F
-    J -->|Yes| K[End - Target reached]
+    A["Analyze Resume & Extract Parameters <br/> Use resume-analyzer agent"] --> B[Open Browser]
+    B --> C[Navigate to LinkedIn]
+    C --> D["Login to LinkedIn <br/> Use linkedin-login agent"]
+    D --> E[Search for Jobs]
+    E --> F{Jobs found?}
+    F -->|No| G[End - no jobs found]
+    F -->|Yes| H[Browse and Apply to Jobs]
+    H --> I{Applied to target count?}
+    I -->|No| E
+    I -->|Yes| J[End - Target reached]
 ```
 
 
