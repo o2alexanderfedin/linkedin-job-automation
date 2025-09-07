@@ -43,7 +43,7 @@ flowchart TD
     A["Analyze Resume & Extract Parameters <br/> Use resume-analyzer agent"] --> B[Open Browser]
     B --> C[Navigate to LinkedIn]
     C --> D["Login to LinkedIn <br/> Use linkedin-login agent"]
-    D --> E[Search for Jobs]
+    D --> E["Search for Jobs <br/> Use linkedin-job-search agent"]
     E --> F{Jobs found?}
     F -->|No| G[End - no jobs found]
     F -->|Yes| H[Browse and Apply to Jobs]
