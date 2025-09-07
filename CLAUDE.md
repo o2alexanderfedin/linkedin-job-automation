@@ -88,6 +88,7 @@ Every agent must specify:
 - **Task Delegation**: When and how to use Task tool
 - **Sequential Dependencies**: Order of operations for complex workflows
 - **Error Handling**: How to handle and recover from failures
+- **Diagnostic Integration**: When to invoke diagnostic-fix-agent for systematic problem resolution
 
 #### 3. Task Execution Rules Section
 Every agent must define:
@@ -115,6 +116,7 @@ Every command must define:
 - **Task Execution Rules**: Sequential vs parallel execution patterns
 - **Context Passing Requirements**: Data flow between workflow stages
 - **Error Recovery**: How to handle workflow failures
+- **Diagnostic Integration**: When to invoke diagnostic-fix-agent for workflow issues
 
 ### File and Data Management
 
@@ -169,11 +171,39 @@ Resume Analysis → LinkedIn Login → Job Search → Job Processing → Applica
 
 ## Quality Standards
 
-### 1. Error Handling
+### 1. Error Handling & Diagnostic Integration
 - **Graceful Degradation**: System continues when possible
 - **Comprehensive Logging**: All errors captured with context
 - **Recovery Strategies**: Automatic retry with exponential backoff
 - **User Notification**: Clear error messages and resolution guidance
+- **Systematic Diagnostics**: All agents and commands must invoke diagnostic-fix-agent for applicable issues
+
+#### 1.1. Diagnostic-Fix-Agent Integration Policy
+**MANDATORY**: All agents and slash commands must include diagnostic-fix-agent invocation for systematic problem resolution:
+
+**Required Error Handling Categories**:
+- **System Errors**: Infrastructure failures, tool crashes, network connectivity issues
+  - Examples: Playwright MCP server failures, file system access errors, browser crashes
+- **Workflow Failures**: Process logic errors, repeated failures, automation breakdowns
+  - Examples: Agent delegation failures, authentication loops, application process crashes
+- **Unexpected Behavior**: Interface changes, validation errors, state corruption
+  - Examples: LinkedIn interface changes, form field detection failures, context passing errors
+
+**Integration Implementation**:
+All agents and commands must include an "Error Handling & Diagnostics" section specifying:
+```markdown
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for [specific system failure types]
+- **Workflow Failures**: Use diagnostic-fix-agent when [specific workflow issues occur]
+- **Unexpected Behavior**: Call diagnostic-fix-agent for [specific unexpected scenarios]
+```
+
+**Diagnostic-Fix-Agent Capabilities**:
+- Methodical problem-solving with forensic analysis
+- Log analysis and system state investigation
+- Root cause identification and targeted fix implementation
+- Comprehensive verification and testing of applied solutions
+- Documentation of all changes and prevention recommendations
 
 ### 2. Security Standards
 - **Credential Protection**: Never expose credentials in logs
@@ -200,6 +230,7 @@ Resume Analysis → LinkedIn Login → Job Search → Job Processing → Applica
 2. Define clear input/output context requirements
 3. Specify Task execution patterns (sequential vs parallel)
 4. Include comprehensive error handling and recovery
+5. **MANDATORY**: Add diagnostic-fix-agent integration section with specific error scenarios
 
 ### 2. Modifying Existing Workflows
 1. Update context passing requirements when changing data flow
@@ -218,6 +249,7 @@ Resume Analysis → LinkedIn Login → Job Search → Job Processing → Applica
 2. Use TodoWrite for tracking progress through complex operations
 3. Implement proper error context capture and reporting
 4. Monitor application success rates and system performance
+5. **Leverage diagnostic-fix-agent**: For systematic investigation and resolution of persistent issues
 
 ## Compliance and Ethics
 

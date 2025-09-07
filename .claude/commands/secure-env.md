@@ -39,4 +39,9 @@ If .env was accidentally committed, provides commands to:
 - Clean from git history 
 - Force push if necessary (with warnings)
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for file permission setting failures, git repository access errors, or .gitignore modification issues
+- **Workflow Failures**: Use diagnostic-fix-agent when security verification fails repeatedly, git history cleanup errors occur, or file system operations fail
+- **Unexpected Behavior**: Call diagnostic-fix-agent for unexpected git repository states, .env file access errors, or permission verification failures
+
 Secure your LinkedIn credentials and prevent accidental exposure in version control.

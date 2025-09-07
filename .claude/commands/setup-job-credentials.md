@@ -131,4 +131,9 @@ Once configured, all other job application commands (`/linkedin-jobs`, `/apply-j
    - Expected credential format for verification
    - Security requirements (file permissions) for final check
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for file system permission errors, disk space issues, or .env file corruption
+- **Workflow Failures**: Use diagnostic-fix-agent when credential validation fails repeatedly, backup creation fails, or permission setting errors occur
+- **Unexpected Behavior**: Call diagnostic-fix-agent for resume file access errors, directory creation failures, or credential format validation issues
+
 Configure your job application credentials for seamless LinkedIn automation with secure local storage.

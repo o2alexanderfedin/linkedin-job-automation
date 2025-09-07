@@ -129,5 +129,10 @@ When invoking application-logger agent, always pass:
 - Application timing (posting date, application timestamp)
 - Relevance assessment (High/Medium/Low match, reasoning)
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP failures, browser form submission errors, or application-logger agent failures
+- **Workflow Failures**: Use diagnostic-fix-agent when job evaluation logic fails repeatedly or application submission processes crash
+- **Unexpected Behavior**: Call diagnostic-fix-agent for form field detection failures, resume upload errors, or external application redirect issues
+
 **Return Status:**
 Status indicating job processing outcome: Applied (with logging confirmation), Skipped, or Error with brief reasoning.

@@ -87,6 +87,11 @@ When using Task tool, always pass:
 - Authentication flow results from previous steps
 - User context for personalized authentication approach
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP failures, browser crashes, or network connectivity issues
+- **Workflow Failures**: Use diagnostic-fix-agent when authentication process fails unexpectedly or LinkedIn interface changes
+- **Unexpected Behavior**: Call diagnostic-fix-agent for credential validation failures, session state corruption, or authentication loop issues
+
 **Return Status:**
 - ✅ **Success**: Ready for job search
 - ⚠️ **Partial**: Requires 2FA/manual verification  

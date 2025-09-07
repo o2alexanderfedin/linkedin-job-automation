@@ -114,4 +114,9 @@ Each application will be documented with:
    - Session context (start time, search parameters)
    - Current application progress for accurate counting
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP server failures, browser automation errors, or workflow execution crashes
+- **Workflow Failures**: Use diagnostic-fix-agent when agent delegation fails repeatedly, Task execution errors occur, or automation workflow breaks unexpectedly
+- **Unexpected Behavior**: Call diagnostic-fix-agent for context passing failures between agents, resume analysis errors, or LinkedIn interface changes that break automation
+
 Execute the full LinkedIn job application automation workflow with the specified search parameters.

@@ -76,5 +76,10 @@ When using Task tool, always pass:
 - File reading context and log format expectations
 - Count extraction methodology for consistent tracking
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for file system access failures, log directory permission errors, or date calculation failures
+- **Workflow Failures**: Use diagnostic-fix-agent when log file parsing consistently fails or count extraction returns invalid results
+- **Unexpected Behavior**: Call diagnostic-fix-agent for corrupted log files, missing application records, or timestamp parsing errors
+
 **Return Format:**
 Boolean response indicating whether target application count has been reached, with optional count summary for reference.

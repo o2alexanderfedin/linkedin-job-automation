@@ -82,5 +82,10 @@ When using Task tool, always pass:
 - Sequential numbering context from existing log entries
 - Record formatting requirements and log structure expectations
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for file system write failures, directory creation errors, or permission access issues
+- **Workflow Failures**: Use diagnostic-fix-agent when sequential numbering logic fails repeatedly or log file corruption occurs
+- **Unexpected Behavior**: Call diagnostic-fix-agent for date calculation errors, record formatting failures, or log file append failures
+
 **Return Format:**
 Confirmation that application record has been successfully logged with the assigned number and today's date.

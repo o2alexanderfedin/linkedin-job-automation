@@ -72,4 +72,9 @@ flowchart TD
    - Current session start time for daily tracking
    - Search context (keywords, filters used) for logging context
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP failures, browser pagination errors, or job-processor agent crashes
+- **Workflow Failures**: Use diagnostic-fix-agent when job selection logic fails repeatedly, application workflow breaks, or tracking system malfunctions
+- **Unexpected Behavior**: Call diagnostic-fix-agent for LinkedIn interface changes that break job browsing, application form errors, or context passing failures
+
 Execute the browse and apply workflow for job opportunities.

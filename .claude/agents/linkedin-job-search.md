@@ -73,5 +73,10 @@ When using Task tool, always pass:
 - Browser navigation state and current page information
 - Filter configuration results from previous navigation steps
 
+**Error Handling & Diagnostics:**
+- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP failures, browser navigation errors, or LinkedIn page load issues
+- **Workflow Failures**: Use diagnostic-fix-agent when search parameters cannot be applied or LinkedIn interface changes break automation
+- **Unexpected Behavior**: Call diagnostic-fix-agent for filter application failures, search result loading errors, or session timeout issues
+
 **Browser State Goal:**
 Leave browser open on LinkedIn job search results page with applied filters, ready for next automation step to review and interact with discovered job opportunities.
