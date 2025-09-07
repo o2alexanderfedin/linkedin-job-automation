@@ -31,6 +31,8 @@ The system will automatically analyze the candidate's resume to determine:
 - `/linkedin-jobs Find Principal Engineer positions in Seattle, apply to 50`
 - `/linkedin-jobs AI/ML Engineer roles in New York area, target 30 applications this week`
 - `/linkedin-jobs Senior Engineer remote positions, apply to 10 jobs posted yesterday`
+- `/linkedin-jobs Apply to entry-level and mid-level positions, include overqualified roles`
+- `/linkedin-jobs Apply to 30 jobs including positions I'm overqualified for`
 
 **Smart Defaults Example:**
 For a resume showing "Principal Software Engineer at Waymo" with "AI/ML, Python, C++" skills in "San Jose, CA", the system would default to searching for "Principal Software Engineer AI/ML" positions in "San Jose, CA" and nearby areas.
@@ -82,5 +84,34 @@ Each application will be documented with:
 4. **Browse/Apply** → **Application Tracking** (tracking needs application completion data)
 
 **Never run Task tool calls in parallel** - Each step requires output from the previous step.
+
+## Context Passing Requirements
+
+**CRITICAL:** Pass complete context to all Task tool calls to ensure proper workflow execution:
+
+1. **Resume Analysis Task** - Pass:
+   - Resume file path from command arguments or .env
+   - Target application count from arguments
+   - Any explicit job search parameters from user input
+
+2. **Login Task** - Pass:
+   - Candidate name and contact info from resume analysis results
+   - User preferences and location context for personalized login flow
+
+3. **Job Search Task** - Pass:
+   - Complete search parameters from resume analysis (keywords, location, seniority)
+   - Authentication session status from login task
+   - Target job count and filtering preferences
+
+4. **Browse/Apply Task** - Pass:
+   - Complete candidate profile from resume analysis
+   - Target application count and current progress
+   - Job search context (applied filters, search terms used)
+   - User instructions regarding overqualified positions (from command arguments)
+
+5. **Application Tracking Task** - Pass:
+   - Target application count for comparison
+   - Session context (start time, search parameters)
+   - Current application progress for accurate counting
 
 Execute the full LinkedIn job application automation workflow with the specified search parameters.

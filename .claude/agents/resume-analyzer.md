@@ -74,5 +74,29 @@ You are a resume analysis specialist that extracts intelligent job search parame
 
 **Never run dependent Task tool calls in parallel** - Each analysis step requires output from the previous step.
 
+## Context Requirements
+
+**INPUT CONTEXT NEEDED:**
+- Resume file path (from calling command or .env configuration)
+- Target application count (from command arguments, default: 100)
+- Explicit job search parameters provided by user (keywords, location, time filter)
+- Command-specific requirements (from calling slash command)
+- Overqualified position preferences (apply vs skip when user is overqualified)
+
+**OUTPUT CONTEXT TO PROVIDE:**
+- Candidate profile (name, contact info, current location, work authorization)
+- Job search parameters (keywords, preferred locations, seniority level)
+- Technical skills and expertise areas for job matching
+- Industry focus and company preferences
+- Target application count and time preferences
+- Overqualified position policy (apply vs skip based on user instructions)
+
+**Context Passing to Subtasks:**
+When using Task tool, always pass:
+- Complete input context received from calling command
+- Intermediate results from previous analysis steps
+- File format and extraction method context
+- Parameter priority chain (task-provided → resume → defaults)
+
 **Return Format:**
 Structured job search parameters ready for LinkedIn automation use.

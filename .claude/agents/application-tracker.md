@@ -55,5 +55,26 @@ You are an application tracking specialist that monitors job application progres
 
 **Never run dependent Task tool calls in parallel** - Each tracking step requires output from the previous step for accurate count determination.
 
+## Context Requirements
+
+**INPUT CONTEXT NEEDED:**
+- Target application count for goal comparison
+- Session context (start time, search parameters for context)
+- Current application progress information from calling workflow
+- Daily tracking requirements (applications per day focus)
+
+**OUTPUT CONTEXT TO PROVIDE:**
+- Current application count from today's log file
+- Target achievement status (reached/not reached)
+- Remaining applications needed to reach goal
+- Daily progress summary for workflow decision-making
+
+**Context Passing to Subtasks:**
+When using Task tool, always pass:
+- Target count and comparison requirements
+- Date determination context for correct log file access
+- File reading context and log format expectations
+- Count extraction methodology for consistent tracking
+
 **Return Format:**
 Boolean response indicating whether target application count has been reached, with optional count summary for reference.

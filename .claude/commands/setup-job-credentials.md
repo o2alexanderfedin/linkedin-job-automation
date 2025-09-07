@@ -107,4 +107,28 @@ Once configured, all other job application commands (`/linkedin-jobs`, `/apply-j
 
 **Never run Task tool calls in parallel** - Each file operation depends on the previous step's completion.
 
+## Context Passing Requirements
+
+**CRITICAL:** Pass complete context to all Task tool calls to ensure proper credential setup:
+
+1. **Input Validation Task** - Pass:
+   - All provided command arguments (email, password, phone, resume path, location, work auth)
+   - Current working directory for relative path resolution
+   - Existing .env file status for backup decisions
+
+2. **Backup Creation Task** - Pass:
+   - Existing .env file path and content from validation
+   - Timestamp for backup file naming
+   - File permissions context for backup security
+
+3. **Credential Writing Task** - Pass:
+   - Validated credential data from validation task
+   - Backup confirmation from backup task
+   - Target .env file path and format requirements
+
+4. **Verification Task** - Pass:
+   - Written credential file path from writing task
+   - Expected credential format for verification
+   - Security requirements (file permissions) for final check
+
 Configure your job application credentials for seamless LinkedIn automation with secure local storage.

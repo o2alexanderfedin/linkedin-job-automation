@@ -23,7 +23,7 @@ Thumbs.db
 *.swo
 
 # Temporary files
-tmp/
+.claude/tmp/
 *.tmp
 *.temp
 

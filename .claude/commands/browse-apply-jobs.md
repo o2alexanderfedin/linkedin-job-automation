@@ -23,7 +23,7 @@ Parse the following free-text instructions to extract application parameters: $A
 - `/browse-apply-jobs Apply to relevant Senior Engineer roles, target 30 applications`
 
 **Smart Defaults Example:**
-For a candidate with Principal Software Engineer background in AI/ML, the system would apply to relevant Principal/Staff/Senior engineering positions that match technical expertise and experience level.
+For a candidate with Principal Software Engineer background in AI/ML, the system would apply to relevant Principal/Staff/Senior engineering positions that match technical expertise and experience level. If user requests including overqualified roles, it would also apply to mid-level and entry-level positions.
 
 **Automation Process Flow:**
 
@@ -55,5 +55,21 @@ flowchart TD
 2. **Application Tracking** (after each application to check count)
 
 **Never run Task tool calls in parallel** - Each job must be completely processed before moving to the next job.
+
+## Context Passing Requirements
+
+**CRITICAL:** Pass complete context to all Task tool calls to ensure proper job processing:
+
+1. **Job Processing Task** (job-processor agent) - Pass:
+   - Complete candidate profile (skills, experience, preferences)
+   - Target application count and current progress  
+   - Application preferences (Easy Apply preference, salary requirements, overqualified policy)
+   - Resume file path for upload during applications
+   - User instructions regarding overqualified positions (from original command arguments)
+
+2. **Application Tracking Task** (application-tracker agent) - Pass:
+   - Target application count for goal comparison
+   - Current session start time for daily tracking
+   - Search context (keywords, filters used) for logging context
 
 Execute the browse and apply workflow for job opportunities.
