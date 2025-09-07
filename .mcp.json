@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "playwrite": {
+      "type": "http",
+      "url": "http://localhost:8931/mcp"
+    }
+  }
+}
