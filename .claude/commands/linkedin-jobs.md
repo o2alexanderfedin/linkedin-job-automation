@@ -2,7 +2,6 @@
 allowed-tools: mcp__playwrite__browser_*, Bash(*), Read(*), Write(*), Edit(*), Glob(*), Grep(*), TodoWrite(*), Task(*)
 argument-hint: [free-text instructions with keywords, location, time, and target count]
 description: Automated LinkedIn job search and application with comprehensive tracking
-model: claude-3-5-sonnet-20241022
 ---
 
 # LinkedIn Job Application Automation

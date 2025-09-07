@@ -1,5 +1,5 @@
 ---
-allowed-tools: Write(*), Read(*), Edit(*)
+allowed-tools: Write(*), Read(*), Edit(*), TodoWrite(*), Bash(*)
 argument-hint: [email] [password] [phone] [resume-path] [location] [work-auth]
 description: Set up or update job application credentials for LinkedIn automation
 ---
@@ -17,12 +17,20 @@ Configure credentials for LinkedIn job application automation:
 - **Work Authorization**: $6 - Your work authorization status
 
 **Process:**
+- Use TodoWrite tool to plan complete credential setup workflow
+- Mark tasks in_progress before execution, completed after success
+- Revise todo list if validation fails or file operations encounter issues
 1. Validate provided credentials and paths
 2. Check if resume file exists at specified path
 3. Save credentials securely to .env file in current directory
 4. Create backup of existing .env if it exists
-5. Test LinkedIn authentication if requested
+5. Set secure file permissions and verify setup
 6. Display summary of configured credentials (without showing password)
+
+**Setup Planning:**
+- Create initial todo list covering: validate inputs → backup existing .env → create new .env → set permissions → verify setup
+- Adapt plan if file validation fails or security setup encounters errors
+- Track progress through credential configuration for transparency and error recovery
 
 **Environment Variables Created:**
 - `LINKEDIN_EMAIL` - Login email

@@ -2,7 +2,6 @@
 allowed-tools: mcp__playwrite__browser_*, Task(*), TodoWrite(*), Read(*), Edit(*), Write(*)
 argument-hint: [free-text instructions with target count and application preferences]
 description: Browse LinkedIn job search results and apply to suitable positions with intelligent filtering
-model: claude-3-5-sonnet-20241022
 ---
 
 # Browse and Apply to Jobs
