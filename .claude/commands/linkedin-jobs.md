@@ -46,14 +46,15 @@ flowchart TD
     D --> E["Search for Jobs <br/> Use linkedin-job-search agent"]
     E --> F{Jobs found?}
     F -->|No| G[End - no jobs found]
-    F -->|Yes| H[Browse and Apply to Jobs]
-    H --> I{Applied to target count?}
+    F -->|Yes| H["Browse and Apply to Jobs <br/> Use Task tool with browse-apply-jobs.md command"]
+    H --> I{"Applied to target count? <br/> Use application-tracker agent"}
     I -->|No| E
     I -->|Yes| J[End - Target reached]
 ```
 
 
 **Key Features:**
+- Uses Playwright MCP server exclusively for all browser interactions
 - Human-like interaction patterns (delays, natural scrolling)
 - Comprehensive job matching based on candidate profile
 - Automatic resume upload and form completion
