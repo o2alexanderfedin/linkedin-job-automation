@@ -30,7 +30,7 @@ For a candidate with Principal Software Engineer background in AI/ML, the system
 
 ```mermaid
 flowchart TD
-    A[Select Next Job from List] --> B[Process Job]
+    A[Select Next Job from List] --> B["Process Job <br/> Use job-processor agent"]
     B --> C{Applied to target count?}
     C -->|Yes| D[End - Target reached]
     C -->|No| E{More jobs on page?}

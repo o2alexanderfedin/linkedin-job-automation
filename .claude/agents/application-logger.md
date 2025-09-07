@@ -38,6 +38,8 @@ You are an application logging specialist that documents job applications in org
 - **Location**: Work location details (remote, hybrid, on-site, city/state)
 - **Position Posted**: Timestamp when job was originally published (if available)
 - **Application Time**: Timestamp when application was submitted
+- **Job Relevance**: Match level to candidate profile (High, Medium, Low)
+- **Application Reasoning**: Brief explanation why this job was worth applying to
 
 **Data Priority:**
 - Use provided job information from calling task
