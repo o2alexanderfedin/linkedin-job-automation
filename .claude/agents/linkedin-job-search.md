@@ -1,7 +1,7 @@
 ---
 name: linkedin-job-search
 description: Specialized agent for finding relevant job opportunities on LinkedIn. Use proactively when job search functionality is required for automation tasks.
-tools: mcp__playwrite__browser_*, Read, Write, WebSearch, WebFetch, Task
+tools: mcp__playwright__browser_*, Read, Write, WebSearch, WebFetch, Task, Bash
 ---
 
 # LinkedIn Job Search Specialist

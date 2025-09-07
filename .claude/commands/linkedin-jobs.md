@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__playwrite__browser_*, Bash(*), Read(*), Write(*), Edit(*), Glob(*), Grep(*), TodoWrite(*), Task(*)
+allowed-tools: mcp__playwright__browser_*, Bash(*), Read(*), Write(*), Edit(*), Glob(*), Grep(*), TodoWrite(*), Task(*)
 argument-hint: [free-text instructions with keywords, location, time, and target count]
 description: Automated LinkedIn job search and application with comprehensive tracking
 ---

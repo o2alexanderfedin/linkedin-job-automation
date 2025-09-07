@@ -1,7 +1,7 @@
 ---
 name: job-processor
 description: Specialized agent for processing individual LinkedIn job postings - evaluation, application decision, and submission. Use proactively when individual job processing is required.
-tools: mcp__playwrite__browser_*, Task, Read, TodoWrite
+tools: mcp__playwright__browser_*, Task, Read, TodoWrite, Bash
 ---
 
 # Job Processing Specialist

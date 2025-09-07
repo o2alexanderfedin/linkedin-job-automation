@@ -61,7 +61,7 @@ All Task tool calls must receive complete context to ensure proper execution:
 ### Tool Usage Patterns
 
 **Required Tool Categories**:
-- **Browser Automation**: `mcp__playwrite__browser_*` for all LinkedIn interactions
+- **Browser Automation**: `mcp__playwright__browser_*` for all LinkedIn interactions
 - **Task Orchestration**: `Task` for complex multi-step operations  
 - **Progress Tracking**: `TodoWrite` for workflow planning and progress
 - **File Operations**: `Read`, `Write`, `Edit` for data persistence

@@ -1,5 +1,5 @@
 ---
-allowed-tools: mcp__playwrite__browser_*, Task(*), TodoWrite(*), Read(*), Edit(*), Write(*)
+allowed-tools: mcp__playwright__browser_*, Task(*), TodoWrite(*), Read(*), Edit(*), Write(*), Bash(*)
 argument-hint: [free-text instructions with target count and application preferences]
 description: Browse LinkedIn job search results and apply to suitable positions with intelligent filtering
 ---

@@ -130,7 +130,7 @@ configure_mcp() {
     cat > "$MCP_CONFIG_FILE" << EOF
 {
   "mcpServers": {
-    "playwrite": {
+    "playwright": {
       "type": "http",
       "url": "$PLAYWRIGHT_MCP_URL"
     }

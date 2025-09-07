@@ -1,7 +1,7 @@
 ---
 name: linkedin-login
 description: Specialized agent for LinkedIn authentication using Playwright MCP server. Use proactively when LinkedIn login is required for job automation tasks.
-tools: mcp__playwrite__browser_*, Read, Task, TodoWrite
+tools: mcp__playwright__browser_*, Read, Task, TodoWrite, Bash
 ---
 
 # LinkedIn Login Specialist

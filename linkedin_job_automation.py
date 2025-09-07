@@ -76,7 +76,7 @@ class LinkedInJobAutomation:
             
             # Use persistent context to maintain login session
             self.context = await self.playwright.chromium.launch_persistent_context(
-                user_data_dir="/Users/alexanderfedin/Library/CloudStorage/OneDrive-Personal/Resumes/playwrite",
+                user_data_dir="/Users/alexanderfedin/Library/CloudStorage/OneDrive-Personal/Resumes/playwright",
                 headless=False,  # Set to True for headless mode
                 slow_mo=1000,    # Slow down actions for stability
                 viewport={'width': 1920, 'height': 1080},
