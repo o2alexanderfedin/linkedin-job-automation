@@ -67,7 +67,10 @@ Configure credentials for LinkedIn job application automation:
 - Validates resume file exists at specified path
 
 **Usage by Other Commands:**
-Once configured, all other job application commands (`/linkedin-jobs`, `/apply-job`, etc.) will automatically use the credentials from the .env file, falling back to command arguments if .env values are not found.
+Once configured, all other job application commands will automatically use the credentials from the .env file, falling back to command arguments if .env values are not found:
+- `/linkedin-jobs` *(.claude/commands/linkedin-jobs.md)* - Complete job automation workflow
+- `/linkedin-login` *(.claude/commands/linkedin-login.md)* - LinkedIn authentication
+- `/process-job` *(.claude/commands/process-job.md)* - Individual job processing
 
 **Implementation Steps:**
 

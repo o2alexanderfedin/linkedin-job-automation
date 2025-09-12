@@ -29,7 +29,7 @@ For a candidate with Principal Software Engineer background in AI/ML, the system
 
 ```mermaid
 flowchart TD
-    A[Select Next Job from List] --> B["Process Job <br/> Use job-processor agent"]
+    A[Select Next Job from List] --> B["Process Job <br/> Use /process-job command"]
     B --> C{Applied to target count?}
     C -->|Yes| D[End - Target reached]
     C -->|No| E{More jobs on page?}
@@ -51,7 +51,7 @@ flowchart TD
 
 **SEQUENTIAL EXECUTION REQUIRED** - All Task tool calls must run sequentially:
 
-1. **Job Processing** (one job at a time using job-processor agent)
+1. **Job Processing** (one job at a time using /process-job)
 2. **Application Tracking** (after each application to check count)
 
 **Never run Task tool calls in parallel** - Each job must be completely processed before moving to the next job.
@@ -60,20 +60,20 @@ flowchart TD
 
 **CRITICAL:** Pass complete context to all Task tool calls to ensure proper job processing:
 
-1. **Job Processing Task** (job-processor agent) - Pass:
+1. **Job Processing Task** (/process-job *(.claude/commands/process-job.md)*) - Pass:
    - Complete candidate profile (skills, experience, preferences)
    - Target application count and current progress  
    - Application preferences (Easy Apply preference, salary requirements, overqualified policy)
    - Resume file path for upload during applications
    - User instructions regarding overqualified positions (from original command arguments)
 
-2. **Application Tracking Task** (application-tracker agent) - Pass:
+2. **Application Tracking Task** (/log-application *(.claude/commands/log-application.md)*) - Pass:
    - Target application count for goal comparison
    - Current session start time for daily tracking
    - Search context (keywords, filters used) for logging context
 
 **Error Handling & Diagnostics:**
-- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP failures, browser pagination errors, or job-processor agent crashes
+- **System Errors**: Invoke diagnostic-fix-agent for Playwright MCP failures, browser pagination errors, or /process-job command crashes
 - **Workflow Failures**: Use diagnostic-fix-agent when job selection logic fails repeatedly, application workflow breaks, or tracking system malfunctions
 - **Unexpected Behavior**: Call diagnostic-fix-agent for LinkedIn interface changes that break job browsing, application form errors, or context passing failures
 
